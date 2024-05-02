@@ -11,3 +11,15 @@
 	</p>
 </div>
 
+by Jairo Junior<br>
+<div>
+	<a href="www.linkedin.com/in/jairosilva1a">
+		<img width="32px" src="https://github.com/felipejsborges/felipejsborges/blob/master/assets/linkedin.svg" alt="LinkedIn">
+	</a>
+	<a href="https://wa.me/+5584986048955">
+		<img width="32px" src="https://github.com/felipejsborges/felipejsborges/blob/master/assets/whatsapp.svg" alt="WhatsApp">
+	</a>
+	<a href="mailto:juniorsilvasobrinho1999@gmail.com">
+		<img width="32px" src="https://github.com/felipejsborges/felipejsborges/blob/master/assets/mail.svg" alt="E-mail">
+	</a>
+</div>
