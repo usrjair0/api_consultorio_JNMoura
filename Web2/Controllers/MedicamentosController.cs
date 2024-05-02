@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
+using System;
+using System.Data.SqlClient;
 
 namespace Web2.Controllers
 {
@@ -21,7 +18,16 @@ namespace Web2.Controllers
         [HttpGet]
         public IHttpActionResult Get()
         {
-            return Ok(this.medicamentoRepo.ObterTodos());
+            try
+            {
+                return Ok(this.medicamentoRepo.ObterTodos());
+            }
+            catch (Exception ex)
+            {
+                //fazer log de erro em um arquivo
+
+                return InternalServerError(ex); 
+            }    
         }
 
         [HttpGet]
@@ -29,27 +35,25 @@ namespace Web2.Controllers
         public IHttpActionResult Get(int id)
         {
             Models.Medicamento medicamento = this.medicamentoRepo.ObterporID(id);
-            if (medicamento.Id == 0)
+            if (medicamento is null)
                 return BadRequest("Solicitação inválida");
             return Ok(medicamento);
         }
 
         [HttpGet]
+        // GET: api/medicamentos?nome=dipirona
         public IHttpActionResult Get(string nome)
         {
-            List<Models.Medicamento> medicamentos = medicamentoRepo.ObterporNome(nome);
-            if(medicamentos.Count == 0)
-            {
-                return BadRequest("Medicamento não encontrado!");
-            }
-            return Ok(medicamentos);
+            return Ok(medicamentoRepo.ObterporNome(nome));
         }
 
         [HttpPost]
         // POST: api/medicamentos
         public IHttpActionResult Post(Models.Medicamento medicamento)
         {
-            if (!medicamentoRepo.Inserir(medicamento))
+            if (medicamento.Nome == null || medicamento.DataFabricacao == DateTime.MinValue)
+                return BadRequest("dados obrigatórios nome e/ou data fabricação não foram enviados.");
+            if (!this.medicamentoRepo.Inserir(medicamento))
                 return InternalServerError();
             return Ok(medicamento);
         }
@@ -60,7 +64,14 @@ namespace Web2.Controllers
         {
             if (medicamento.Id != id)
                 return BadRequest("O id da requisição não coincide com o id do médico");
-            if(!medicamentoRepo.Update(id, medicamento))
+
+            if (medicamento.Nome == null || medicamento.DataFabricacao == DateTime.MinValue)
+                return BadRequest("dados obrigatórios nome e/ou data fabricação não foram enviados.");
+
+            if (medicamento.DataVencimento != null && medicamento.DataVencimento < medicamento.DataFabricacao)
+                return BadRequest("data vencimento não pode ser menor que a data de fabricação");
+
+            if (!this.medicamentoRepo.Update(id, medicamento))
                 return InternalServerError();
             return Ok(medicamento);
         }
@@ -68,7 +79,7 @@ namespace Web2.Controllers
         // DELETE: api/medicamentos/5
         public IHttpActionResult Delete(int id)
         {
-            if(!medicamentoRepo.Delete(id))
+            if(!this.medicamentoRepo.Delete(id))
                 return NotFound();
             return Ok();
         }

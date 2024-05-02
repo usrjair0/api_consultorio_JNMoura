@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing.Drawing2D;
 
 namespace Web2.Repositories.SQLServer
 {
@@ -34,9 +33,7 @@ namespace Web2.Repositories.SQLServer
                             medicamento.Id = (int) dr["id"];
                             medicamento.Nome = dr["nome"].ToString();
                             medicamento.DataFabricacao = Convert.ToDateTime(dr["datafabricacao"]);
-                            if(dr.IsDBNull(3))
-                                medicamento.DataVencimento = null;
-                            else
+                            if (!(dr["datavencimento"] is DBNull))
                                 medicamento.DataVencimento = Convert.ToDateTime(dr["datavencimento"]);
                             medicamentos.Add(medicamento);
                         }
@@ -48,7 +45,7 @@ namespace Web2.Repositories.SQLServer
 
         public Models.Medicamento ObterporID(int id)
         {
-            Models.Medicamento medicamento = new Models.Medicamento();
+            Models.Medicamento medicamento = null;
             using (this.conn)
             {
                 conn.Open();
@@ -60,12 +57,11 @@ namespace Web2.Repositories.SQLServer
                     {
                         if(dr.Read())
                         {
+                            medicamento = new Models.Medicamento();
                             medicamento.Id = (int) dr["id"];
                             medicamento.Nome = dr["nome"].ToString();
                             medicamento.DataFabricacao = Convert.ToDateTime(dr["datafabricacao"]);
-                            if (dr.IsDBNull(3))
-                                medicamento.DataVencimento = null;
-                            else
+                            if (!(dr["datavencimento"] is DBNull))
                                 medicamento.DataVencimento = Convert.ToDateTime(dr["datavencimento"]);
                         }
                     }
@@ -92,10 +88,8 @@ namespace Web2.Repositories.SQLServer
                             medicamento.Id = (int)dr["id"];
                             medicamento.Nome = dr["nome"].ToString();
                             medicamento.DataFabricacao = (DateTime) dr["dataFabricacao"];
-                            if (dr.IsDBNull(3))
-                                medicamento.DataVencimento = null;
-                            else
-                                medicamento.DataVencimento = (DateTime) dr["datavencimento"];
+                            if (!(dr["datavencimento"] is DBNull))
+                                medicamento.DataVencimento = Convert.ToDateTime(dr["datavencimento"]);
                             medicamentos.Add(medicamento);
                         }
                     }

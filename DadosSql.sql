@@ -23,9 +23,10 @@ create table medicamento(
 	constraint PK_medicamento primary key (id)
 );
 
+
+
 select id, nome, datafabricacao, datavencimento from medicamento;
 insert into medicamento (nome, datafabricacao, datavencimento) values ('Dipirona','1995-08-20', null);
-insert into medicamento (nome, datafabricacao, datavencimento) values ('Buscopan2','1999-04-05', '2000-04-05');
-insert into medicamento (nome, datafabricacao, datavencimento) values ('Dipirona 2', '2005-07-19', '2050-06-06');
+insert into medicamento (nome, datafabricacao, datavencimento) values ('Buscopan','1999-04-05', '2000-04-05');
+insert into medicamento (nome, datafabricacao, datavencimento) values ('Vitamina C', '2005-07-19', '2010-06-06');
 
-select id, nome, datafabricacao, datavencimento from medicamento where id = 1;
