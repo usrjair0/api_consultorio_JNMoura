@@ -45,7 +45,8 @@
 
 ## Histórico de Versionamento
 
-### :pushpin: Versão 0.1.0 (24 de abril de 2024)
+
+### :pushpin: Versão 0.1.0 (02 de maio de 2024)
 - Lançamento inicial do projeto.
 
 
