@@ -30,3 +30,5 @@ insert into medicamento (nome, datafabricacao, datavencimento) values ('Dipirona
 insert into medicamento (nome, datafabricacao, datavencimento) values ('Buscopan','1999-04-05', '2000-04-05');
 insert into medicamento (nome, datafabricacao, datavencimento) values ('Vitamina C', '2005-07-19', '2010-06-06');
 
+select id, crm, nome from medico;
+insert into medico (nome, crm) values ('João Gomes','123456/SP');
