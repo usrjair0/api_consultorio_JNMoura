@@ -119,7 +119,7 @@ namespace Web2.Repositories.SQLServer
             return medicamento.Id != 0;
         }
 
-        public bool Update(int id, Models.Medicamento medicamento)
+        public bool Update(Models.Medicamento medicamento)
         {
             int linhasAfetadas;
             using(conn)
@@ -128,7 +128,7 @@ namespace Web2.Repositories.SQLServer
                 using(cmd) 
                 {
                     cmd.CommandText = "update medicamento set nome = @nome, datafabricacao = @df, datavencimento = @dv where id = @id;";
-                    cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.VarChar)).Value = id;
+                    cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.VarChar)).Value = medicamento.Id;
                     cmd.Parameters.Add(new SqlParameter("@nome", SqlDbType.VarChar)).Value = medicamento.Nome;
                     cmd.Parameters.Add(new SqlParameter("@df", SqlDbType.Date)).Value = medicamento.DataFabricacao;
                     cmd.Parameters.Add(new SqlParameter("dv", SqlDbType.Date)).Value = medicamento.DataFabricacao;

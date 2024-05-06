@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|c:\\users\\junio\\onedrive\\documentos\\jn_moura\\projeto api github\\web2\\web2\\controllers\\medicamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\web2\\controllers\\medicamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|solutionrelative:web2\\controllers\\medicamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|c:\\users\\junio\\onedrive\\documentos\\jn_moura\\projeto api github\\web2\\web2\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|solutionrelative:web2\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|c:\\users\\junio\\onedrive\\documentos\\jn_moura\\projeto api github\\web2\\web2\\configurations\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|solutionrelative:web2\\configurations\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|c:\\users\\junio\\onedrive\\documentos\\jn_moura\\projeto api github\\web2\\web2\\utils\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|solutionrelative:web2\\utils\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\web2\\repositories\\sqlserver\\medicamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,8 +30,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Logger.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\Web2\\Utils\\Logger.cs",
+              "RelativeDocumentMoniker": "Web2\\Utils\\Logger.cs",
+              "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\Web2\\Utils\\Logger.cs",
+              "RelativeToolTip": "Web2\\Utils\\Logger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T21:13:19.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Logger.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\Web2\\Configurations\\Logger.cs",
+              "RelativeDocumentMoniker": "Web2\\Configurations\\Logger.cs",
+              "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\Web2\\Configurations\\Logger.cs",
+              "RelativeToolTip": "Web2\\Configurations\\Logger.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T20:38:10.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\Web2\\Web.config",
+              "RelativeDocumentMoniker": "Web2\\Web.config",
+              "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\Web2\\Web.config",
+              "RelativeToolTip": "Web2\\Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-05-06T20:38:20.646Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,20 +79,20 @@
               "RelativeDocumentMoniker": "Web2\\Controllers\\MedicamentosController.cs",
               "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\Web2\\Controllers\\MedicamentosController.cs",
               "RelativeToolTip": "Web2\\Controllers\\MedicamentosController.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAABUAAAANAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwC4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-02T11:46:50.447Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Medicamento.cs",
               "DocumentMoniker": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\Web2\\Repositories\\SQLServer\\Medicamento.cs",
               "RelativeDocumentMoniker": "Web2\\Repositories\\SQLServer\\Medicamento.cs",
               "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\jn_Moura\\Projeto API github\\Web2\\Web2\\Repositories\\SQLServer\\Medicamento.cs",
               "RelativeToolTip": "Web2\\Repositories\\SQLServer\\Medicamento.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAcAAAA",
+              "ViewState": "AQIAACsAAAAAAAAAAAD4v0YAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-30T23:53:25.231Z",
               "EditorCaption": ""
