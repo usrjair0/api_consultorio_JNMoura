@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Web2.Controllers
@@ -13,11 +16,11 @@ namespace Web2.Controllers
 
         [HttpGet]
         // GET: api/Medicos
-        public IHttpActionResult Get()
+        public async Task<IHttpActionResult> Get()
         {
             try
             {
-                return Ok(RepositorioMedico.Select());
+                return Ok(await RepositorioMedico.Select());
             }
             catch (Exception ex)
             {
@@ -26,6 +29,23 @@ namespace Web2.Controllers
             }
             
         }
+
+        [HttpGet]
+        // GET: api/Medicos?nome=j
+        public IHttpActionResult Get(string nome)
+        {
+            try
+            {
+                return Ok(this.RepositorioMedico.SelectByNome(nome));
+            }
+            catch (Exception ex)
+            {
+                Utils.Logger.WriteException(Configurations.Logger.getFullPath(), ex);
+                return InternalServerError();
+            }
+            
+        }
+
 
         [HttpGet]
         // GET: api/Medicos/5

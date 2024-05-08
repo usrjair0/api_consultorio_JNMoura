@@ -32,3 +32,9 @@ insert into medicamento (nome, datafabricacao, datavencimento) values ('Vitamina
 
 select id, crm, nome from medico;
 insert into medico (nome, crm) values ('João Gomes','123456/SP');
+insert into medico (nome, crm) values ('Jairo Silva','123457/SP');
+insert into medico (nome, crm) values ('Leticia Albuquerque','123458/SP');
+insert into medico (nome, crm) values ('Thiago José','123459/RN');
+
+
+select id, crm, nome from medico where nome like 'j%';
