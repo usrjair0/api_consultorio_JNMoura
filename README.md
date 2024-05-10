@@ -45,7 +45,11 @@
 
 ## Histórico de Versionamento
 
-
+### :pushpin: Versão 1.1.0 (06 de maio de 2024)
+- Adicionado async e await.
+### :pushpin: Versão 1.0.0 (06 de maio de 2024)
+- Adicionado repositório médico, seu controlador e inicio da criação dos métodos http;
+- Aplicação do try catch em todo projeto.
 ### :pushpin: Versão 0.0.0 (02 de maio de 2024)
 - Lançamento inicial do projeto.
 
