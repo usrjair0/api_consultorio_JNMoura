@@ -20,7 +20,7 @@ namespace Web2.Controllers
         {
             try
             {
-                return Ok(await this.medicamentoRepo.ObterTodos());
+               return Ok(await this.medicamentoRepo.ObterTodos());
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace Web2.Controllers
             {
                 Models.Medicamento medicamento = await this.medicamentoRepo.ObterporID(id);
                 if (medicamento is null)
-                    return BadRequest("Solicitação inválida");
+                    return NotFound();
                 return Ok(medicamento);
             }
             catch (Exception ex)
@@ -65,12 +65,12 @@ namespace Web2.Controllers
 
         [HttpPost]
         // POST: api/medicamentos
-        public async Task<IHttpActionResult> Post(Models.Medicamento medicamento)
+        public async Task<IHttpActionResult> Post([FromBody] Models.Medicamento medicamento)
         {
             try
             {
-                if (medicamento.Nome == null || medicamento.DataFabricacao == DateTime.MinValue)
-                    return BadRequest("dados obrigatórios nome e/ou data fabricação não foram enviados.");
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
                 if (!await this.medicamentoRepo.Inserir(medicamento))
                     return InternalServerError();
                 return Ok(medicamento);
@@ -84,16 +84,14 @@ namespace Web2.Controllers
 
         [HttpPut]
         // PUT: api/medicamentos/5
-        public async Task<IHttpActionResult> Put(int id, Models.Medicamento medicamento)
+        public async Task<IHttpActionResult> Put(int id,[FromBody] Models.Medicamento medicamento)
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
                 if (medicamento.Id != id)
                     return BadRequest("O id da requisição não coincide com o id do médico");
-
-                if (medicamento.Nome == null || medicamento.DataFabricacao == DateTime.MinValue)
-                    return BadRequest("dados obrigatórios nome e/ou data fabricação não foram enviados.");
-
                 if (medicamento.DataVencimento != null && medicamento.DataVencimento < medicamento.DataFabricacao)
                     return BadRequest("data vencimento não pode ser menor que a data de fabricação");
                 if(!await this.medicamentoRepo.Update(medicamento))

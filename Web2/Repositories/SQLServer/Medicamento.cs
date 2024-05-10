@@ -128,11 +128,11 @@ namespace Web2.Repositories.SQLServer
                 await this.conn.OpenAsync();
                 using(cmd) 
                 {
-                    cmd.CommandText = "update medicamento set nome = @nome, datafabricacao = @df, datavencimento = @dv where id = @id;";
+                    cmd.CommandText = "update medicamento set nome = @nome, datafabricacao = @datafabricacao, datavencimento = @datavencimento where id = @id;";
                     cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.VarChar)).Value = medicamento.Id;
                     cmd.Parameters.Add(new SqlParameter("@nome", SqlDbType.VarChar)).Value = medicamento.Nome;
-                    cmd.Parameters.Add(new SqlParameter("@df", SqlDbType.Date)).Value = medicamento.DataFabricacao;
-                    cmd.Parameters.Add(new SqlParameter("dv", SqlDbType.Date)).Value = medicamento.DataFabricacao;
+                    cmd.Parameters.Add(new SqlParameter("@datafabricacao", SqlDbType.Date)).Value = medicamento.DataFabricacao;
+                    cmd.Parameters.Add(new SqlParameter("datavencimento", SqlDbType.Date)).Value = medicamento.DataFabricacao;
                     linhasAfetadas = await cmd.ExecuteNonQueryAsync();
                 }
             }

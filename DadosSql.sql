@@ -1,10 +1,10 @@
 create database consultorio2
 use consultorio2;
-
+sp_help medicamento;
 create table medico (
 	id int identity(1,1),
-	crm varchar(9),
-	nome varchar(100),
+	crm varchar(9) not null,
+	nome varchar(100) not null,
 	constraint PK_medico primary key (crm)
 );
 

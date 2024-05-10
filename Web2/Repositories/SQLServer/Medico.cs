@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Threading.Tasks;
+using Web2.Controllers;
 
 namespace Web2.Repositories.SQLServer
 {
@@ -43,19 +44,19 @@ namespace Web2.Repositories.SQLServer
             return medicos;
         }
 
-        public List<Models.Medico> SelectByNome(string nome)
+        public async Task <List<Models.Medico>> SelectByNome(string nome)
         {
             List<Models.Medico> medicos = new List<Models.Medico>();
             using(this.conn)
             {
-                this.conn.Open();
+                await this.conn.OpenAsync();
                 using(this.cmd)
                 {
                     this.cmd.CommandText = "select id, crm, nome from medico where nome like @nome;";
                     this.cmd.Parameters.Add(new SqlParameter("@nome", SqlDbType.VarChar)).Value = $"{nome}%";
-                    using (SqlDataReader dr = this.cmd.ExecuteReader())
+                    using (SqlDataReader dr = await this.cmd.ExecuteReaderAsync())
                     {
-                        while (dr.Read())
+                        while (await dr.ReadAsync())
                         {
                             Models.Medico medico = new Models.Medico
                             {
@@ -69,6 +70,34 @@ namespace Web2.Repositories.SQLServer
                 }
             }
             return medicos;
+        }
+
+        public async Task<Models.Medico> SelectById(int id)
+        {
+            Models.Medico medico = null;
+            using (this.conn) 
+            {
+                await this.conn.OpenAsync();
+                using(this.cmd)
+                {
+                    this.cmd.CommandText = "select id, crm, nome from medico where id = @id;";
+                    this.cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int)).Value = id;
+                    using(SqlDataReader dr = await this.cmd.ExecuteReaderAsync()) 
+                    { 
+                        if(await dr.ReadAsync())
+                        {
+                            medico = new Models.Medico
+                            {
+                                Id = (int)dr["id"],
+                                CRM = dr["crm"].ToString(),
+                                Nome = dr["nome"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+
+            return medico;
         }
     }
 }

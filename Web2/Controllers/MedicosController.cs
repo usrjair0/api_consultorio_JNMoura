@@ -11,7 +11,8 @@ namespace Web2.Controllers
         private readonly Repositories.SQLServer.Medico RepositorioMedico;
         public MedicosController() 
         { 
-            this.RepositorioMedico = new Repositories.SQLServer.Medico(Configurations.Database.getConnectionString());
+            this.RepositorioMedico = new Repositories.SQLServer.
+                Medico(Configurations.Database.getConnectionString());
         }
 
         [HttpGet]
@@ -20,7 +21,7 @@ namespace Web2.Controllers
         {
             try
             {
-                return Ok(await RepositorioMedico.Select());
+                return Ok(await this.RepositorioMedico.Select());
             }
             catch (Exception ex)
             {
@@ -32,11 +33,11 @@ namespace Web2.Controllers
 
         [HttpGet]
         // GET: api/Medicos?nome=j
-        public IHttpActionResult Get(string nome)
+        public async Task<IHttpActionResult> Get(string nome)
         {
             try
             {
-                return Ok(this.RepositorioMedico.SelectByNome(nome));
+                return Ok(await this.RepositorioMedico.SelectByNome(nome));
             }
             catch (Exception ex)
             {
@@ -49,9 +50,21 @@ namespace Web2.Controllers
 
         [HttpGet]
         // GET: api/Medicos/5
-        public string Get(int id)
+        public async Task <IHttpActionResult> Get(int id)
         {
-            return "value";
+            try
+            {
+                Models.Medico medico = await this.RepositorioMedico.SelectById(id);
+                if (medico is null)
+                    return NotFound();
+                return Ok(medico);
+            }
+            catch (Exception ex)
+            {
+                Utils.Logger.WriteException(Configurations.Logger.getFullPath(), ex);
+                return InternalServerError();
+            }
+            
         }
 
         // POST: api/Medicos
