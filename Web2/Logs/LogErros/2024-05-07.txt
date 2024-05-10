@@ -1,0 +1,48 @@
+Data: 2024-05-07 22:52:23
+Mensagem: A propriedade ConnectionString não foi inicializada.
+StackTrace:    em System.Data.SqlClient.SqlConnection.PermissionDemand()
+   em System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em Web2.Repositories.SQLServer.Medico.SelectByNome(String nome) na C:\Users\junio\OneDrive\Documentos\jn_Moura\Projeto API github\Web2\Web2\Repositories\SQLServer\Medico.cs:linha 55
+   em Web2.Controllers.MedicosController.Get(String nome) na C:\Users\junio\OneDrive\Documentos\jn_Moura\Projeto API github\Web2\Web2\Controllers\MedicosController.cs:linha 38
+
+
+Data: 2024-05-07 22:52:27
+Mensagem: A propriedade ConnectionString não foi inicializada.
+StackTrace:    em System.Data.SqlClient.SqlConnection.PermissionDemand()
+   em System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em Web2.Repositories.SQLServer.Medico.SelectByNome(String nome) na C:\Users\junio\OneDrive\Documentos\jn_Moura\Projeto API github\Web2\Web2\Repositories\SQLServer\Medico.cs:linha 55
+   em Web2.Controllers.MedicosController.Get(String nome) na C:\Users\junio\OneDrive\Documentos\jn_Moura\Projeto API github\Web2\Web2\Controllers\MedicosController.cs:linha 38
+
+
+Data: 2024-05-07 22:56:47
+Mensagem: A propriedade ConnectionString não foi inicializada.
+StackTrace:    em System.Data.SqlClient.SqlConnection.PermissionDemand()
+   em System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em Web2.Repositories.SQLServer.Medico.SelectByNome(String nome) na C:\Users\junio\OneDrive\Documentos\jn_Moura\Projeto API github\Web2\Web2\Repositories\SQLServer\Medico.cs:linha 55
+   em Web2.Controllers.MedicosController.Get(String nome) na C:\Users\junio\OneDrive\Documentos\jn_Moura\Projeto API github\Web2\Web2\Controllers\MedicosController.cs:linha 39
+
+
+Data: 2024-05-07 23:03:32
+Mensagem: A propriedade ConnectionString não foi inicializada.
+StackTrace:    em System.Data.SqlClient.SqlConnection.PermissionDemand()
+   em System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   em System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   em System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   em System.Data.SqlClient.SqlConnection.Open()
+   em Web2.Repositories.SQLServer.Medico.SelectByNome(String nome) na C:\Users\junio\OneDrive\Documentos\jn_Moura\Projeto API github\Web2\Web2\Repositories\SQLServer\Medico.cs:linha 55
+   em Web2.Controllers.MedicosController.Get(String nome) na C:\Users\junio\OneDrive\Documentos\jn_Moura\Projeto API github\Web2\Web2\Controllers\MedicosController.cs:linha 38
+
+
