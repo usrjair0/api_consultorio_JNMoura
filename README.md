@@ -45,6 +45,8 @@
 
 ## Histórico de Versionamento
 
+### :pushpin: Versão 1.1.1 (10 de maio de 2024)
+- Adicionado data anotations para medico.
 ### :pushpin: Versão 1.1.0 (06 de maio de 2024)
 - Adicionado async e await.
 ### :pushpin: Versão 1.0.0 (06 de maio de 2024)
