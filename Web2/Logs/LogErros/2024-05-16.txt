@@ -1,0 +1,22 @@
+Data: 2024-05-16 10:53:56
+Mensagem: Referência de objeto não definida para uma instância de um objeto.
+StackTrace:    em Web2.Repositories.SQLServer.Medicamento.<>c__DisplayClass7_0.<ObterporNome>b__0(Medicamento x) na C:\Users\junio\OneDrive\Documentos\JN Moura curso\Projeto API github\Web2\Web2\Repositories\SQLServer\Medicamento.cs:linha 92
+   em System.Collections.Generic.List`1.FindAll(Predicate`1 match)
+   em Web2.Repositories.SQLServer.Medicamento.<ObterporNome>d__7.MoveNext() na C:\Users\junio\OneDrive\Documentos\JN Moura curso\Projeto API github\Web2\Web2\Repositories\SQLServer\Medicamento.cs:linha 92
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   em Web2.Controllers.MedicamentosController.<Get>d__4.MoveNext() na C:\Users\junio\OneDrive\Documentos\JN Moura curso\Projeto API github\Web2\Web2\Controllers\MedicamentosController.cs:linha 57
+
+
+Data: 2024-05-16 11:36:15
+Mensagem: Referência de objeto não definida para uma instância de um objeto.
+StackTrace:    em Web2.Repositories.SQLServer.Medicamento.<ObterporID>d__6.MoveNext() na C:\Users\junio\OneDrive\Documentos\JN Moura curso\Projeto API github\Web2\Web2\Repositories\SQLServer\Medicamento.cs:linha 59
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   em Web2.Controllers.MedicamentosController.<Get>d__3.MoveNext() na C:\Users\junio\OneDrive\Documentos\JN Moura curso\Projeto API github\Web2\Web2\Controllers\MedicamentosController.cs:linha 38
+
+
