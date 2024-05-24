@@ -7,16 +7,17 @@ namespace Web2.Utils
     {
         private static readonly MemoryCache cache = MemoryCache.Default;
 
-        public static object getCache(string key)
+        public static object GetCache(string key)
         {
             return cache.Get(key);
         }
 
-        public static void setCache(string key, object lista, int tempoSegundos)
+        public static void SetCache(string key, object objeto, int tempoSegundos)
         {
-            cache.Set(key, lista, DateTimeOffset.Now.AddSeconds(tempoSegundos));
+            cache.Set(key, objeto, DateTimeOffset.Now.AddSeconds(tempoSegundos));
         }
-        public static void clearCache(string key)
+
+        public static void ClearCache(string key)
         {
             cache.Remove(key);
         }

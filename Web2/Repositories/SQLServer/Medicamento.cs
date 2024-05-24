@@ -11,14 +11,17 @@ namespace Web2.Repositories.SQLServer
     {
         private readonly SqlConnection conn;
         private readonly SqlCommand cmd;
-        private readonly string cacheKey = "medicaKey";
+        private readonly string cacheKey;
         private readonly List<Models.Medicamento> cacheItem;
+        private readonly int DefaultCacheTimeInSeconds;
 
         public Medicamento(string connectionString)
         {
             this.conn = new SqlConnection(connectionString);
             this.cmd = new SqlCommand { Connection = this.conn };
-            this.cacheItem = (List<Models.Medicamento>)Utils.Cache.getCache(cacheKey);
+            this.cacheKey = "medicamentoKey";
+            this.cacheItem = (List<Models.Medicamento>)Utils.Cache.GetCache(cacheKey);
+            this.DefaultCacheTimeInSeconds = Configurations.Cache.GetDefaultCacheTimeInSeconds();
         }
 
         public async Task<List<Models.Medicamento>> ObterTodos()
@@ -48,7 +51,7 @@ namespace Web2.Repositories.SQLServer
                         }
                     }
                 }
-                Utils.Cache.setCache(cacheKey, medicamentos, 15);
+                Utils.Cache.SetCache(cacheKey, medicamentos, DefaultCacheTimeInSeconds);
             }
             return medicamentos;
         }
@@ -83,6 +86,7 @@ namespace Web2.Repositories.SQLServer
                     }
                 }
             }
+            Utils.Cache.ClearCache(cacheKey);
             return medicamento;
         }
 
@@ -91,7 +95,7 @@ namespace Web2.Repositories.SQLServer
             //return cacheItem.Where(x => x.Nome.ToLower().Contains(nome.ToLower())).ToList();
 
             List<Models.Medicamento> medicamentos = cacheItem?.FindAll(x => x.Nome.ToLower().Contains(nome.ToLower()));
-            if(medicamentos != null)
+            if(medicamentos != null && medicamentos.Count != 0)
                 return medicamentos;
 
             medicamentos = new List<Models.Medicamento>();
@@ -118,7 +122,7 @@ namespace Web2.Repositories.SQLServer
                     }
                 }
             }
-
+            Utils.Cache.ClearCache(cacheKey);
             return medicamentos;
         }
 
@@ -139,7 +143,7 @@ namespace Web2.Repositories.SQLServer
                     medicamento.Id = (int)await this.cmd.ExecuteScalarAsync();
                 }
             }
-            Utils.Cache.clearCache(cacheKey);
+            Utils.Cache.ClearCache(cacheKey);
             return medicamento.Id != 0;
         }
 
@@ -166,7 +170,7 @@ namespace Web2.Repositories.SQLServer
                 }
             }
 
-            Utils.Cache.clearCache(cacheKey);
+            Utils.Cache.ClearCache(cacheKey);
 
             return linhasAfetadas == 1;
         }
@@ -184,7 +188,7 @@ namespace Web2.Repositories.SQLServer
                     linhasAfetas = await this.cmd.ExecuteNonQueryAsync();
                 }
             }
-            Utils.Cache.clearCache(cacheKey);
+            Utils.Cache.ClearCache(cacheKey);
 
             return linhasAfetas == 1;
         }
