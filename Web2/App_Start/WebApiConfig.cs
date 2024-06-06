@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Web2
 {
@@ -11,6 +12,7 @@ namespace Web2
         public static void Register(HttpConfiguration config)
         {
             // Configuração e serviços de API Web
+            config.EnableCors();
 
             // Rotas de API Web
             config.MapHttpAttributeRoutes();

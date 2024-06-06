@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 
 namespace Web2.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MedicamentosController : ApiController
     {
         private readonly Repositories.SQLServer.Medicamento medicamentoRepo;
