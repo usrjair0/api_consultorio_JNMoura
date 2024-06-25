@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web.Http;
-using System.Web.Http.Cors;
+﻿using System.Web.Http;
+
 
 namespace Web2
 {

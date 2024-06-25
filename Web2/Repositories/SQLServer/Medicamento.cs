@@ -19,6 +19,7 @@ namespace Web2.Repositories.SQLServer
         {
             this.conn = new SqlConnection(connectionString);
             this.cmd = new SqlCommand { Connection = this.conn };
+
             this.cacheKey = "medicamentoKey";
             this.cacheItem = (List<Models.Medicamento>)Utils.Cache.GetCache(cacheKey);
             this.DefaultCacheTimeInSeconds = Configurations.Cache.GetDefaultCacheTimeInSeconds();

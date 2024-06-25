@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Web2.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class MedicosController : ApiController
     {
         private readonly Repositories.SQLServer.Medico RepositorioMedico;
