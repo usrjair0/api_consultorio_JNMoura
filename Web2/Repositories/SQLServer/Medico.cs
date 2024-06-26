@@ -128,11 +128,48 @@ namespace Web2.Repositories.SQLServer
             return medico.Id != 0;
         }
 
-        //public async Task<bool> Update(Models.Medico medico, int id)
-        //{
-        //    return true;
-        //}
+        public async Task<bool> Update(Models.Medico medico)
+        {
+            int linhasAfetadas;
+            using (this.conn)
+            {
+                await this.conn.OpenAsync();
+                using(this.cmd)
+                {
+                    this.cmd.CommandText = "SELECT COUNT(1) FROM medico WHERE crm = @crm";
+                    this.cmd.Parameters.Add(new SqlParameter("@crm", SqlDbType.VarChar)).Value = medico.CRM;
 
+                    int existingCRMCount = (int)await this.cmd.ExecuteScalarAsync();
+                    if (!Validations.Medico.CheckUniqueCRM(existingCRMCount))
+                        return false;
+                    
+                    cmd.CommandText = @"update medico set nome = @nome, crm = @crm where id=@id;";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int)).Value = medico.Id;
+                    cmd.Parameters.Add(new SqlParameter("nome", SqlDbType.VarChar)).Value = medico.Nome;
+                    cmd.Parameters.Add(new SqlParameter("@crm", SqlDbType.VarChar)).Value = medico.CRM;
+
+                    linhasAfetadas = await this.cmd.ExecuteNonQueryAsync();
+                }
+            }
+            return linhasAfetadas == 1;
+        }
+
+        public async Task<bool> Delete(int id)
+        {
+            int linhasAfetadas;
+            using(this.conn)
+            {
+                await this.conn.OpenAsync();
+                using (this.cmd)
+                {
+                    cmd.CommandText = @"delete from medico where id=@id";
+                    cmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int)).Value = id;
+                    linhasAfetadas = await cmd.ExecuteNonQueryAsync();
+                }
+            }
+            return linhasAfetadas == 1;
+        }
 
     }
 }

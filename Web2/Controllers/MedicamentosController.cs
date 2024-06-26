@@ -38,8 +38,10 @@ namespace Web2.Controllers
             try
             {
                 Models.Medicamento medicamento = await this.medicamentoRepo.SelectById(id);
+
                 if (medicamento is null)
                     return NotFound();
+
                 return Ok(medicamento);
             }
             catch (Exception ex)
@@ -73,8 +75,10 @@ namespace Web2.Controllers
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
+
                 if (!await this.medicamentoRepo.Insert(medicamento))
                     return InternalServerError();
+
                 return Ok(medicamento);
             }
             catch (Exception ex)
@@ -90,12 +94,15 @@ namespace Web2.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                    return BadRequest(ModelState);
                 if (medicamento.Id != id)
                     return BadRequest("O id da requisição não coincide com o id do médico");
+
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+                
                 if (medicamento.DataVencimento != null && medicamento.DataVencimento < medicamento.DataFabricacao)
                     return BadRequest("data vencimento não pode ser menor que a data de fabricação");
+
                 if(!await this.medicamentoRepo.Update(medicamento))
                     return NotFound();
 

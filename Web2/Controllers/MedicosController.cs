@@ -93,14 +93,51 @@ namespace Web2.Controllers
             }
         }
 
+        [HttpPut]
         // PUT: api/Medicos/5
-        public void Put(int id, [FromBody]string value)
+        public async Task<IHttpActionResult> Put(int id, [FromBody]Models.Medico medico)
         {
+            try
+            {
+                if (id != medico.Id)
+                    return BadRequest("O id da requisição não coincide com o id do médico.");
+
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                if (!await this.RepositorioMedico.Update(medico))
+                {
+                    if (!Validations.Medico.UniqueCRM)
+                        return BadRequest("O CRM informado já existe na base de dados");
+                    else
+                        return InternalServerError();
+                }
+                return Ok(medico);
+            }
+            catch (Exception ex)
+            {
+                Utils.Logger.WriteException(Configurations.Logger.getFullPath(), ex);
+                return InternalServerError();
+            }
         }
 
+        [HttpDelete]
         // DELETE: api/Medicos/5
-        public void Delete(int id)
+        public async Task<IHttpActionResult> Delete(int id)
         {
+            try
+            {
+                if (!await this.RepositorioMedico.Delete(id))
+                    return NotFound();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                Utils.Logger.WriteException(Configurations.Logger.getFullPath(), ex);
+                return InternalServerError();
+            }
         }
+
     }
 }
