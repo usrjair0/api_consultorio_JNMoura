@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -9,14 +10,15 @@ namespace Web2.Repositories.SQLServer
     {
         private readonly SqlConnection conn;
         private readonly SqlCommand cmd;
+
         public Medico(string connectionString) 
         { 
             this.conn = new SqlConnection(connectionString);
-            this.cmd = new SqlCommand();
-            this.cmd.Connection = conn;
+            this.cmd = new SqlCommand { Connection = conn };
+
         }
 
-        public async Task <List<Models.Medico> > Select()
+        public async Task <List<Models.Medico>> Select()
         {
             List<Models.Medico> medicos = new List<Models.Medico>();
             using(this.conn)
@@ -98,5 +100,39 @@ namespace Web2.Repositories.SQLServer
 
             return medico;
         }
+
+        public async Task<bool> Insert(Models.Medico medico)
+        {
+            using (this.conn)
+            {
+                await this.conn.OpenAsync();
+                using(this.cmd)
+                {
+                    this.cmd.CommandText = "SELECT COUNT(1) FROM medico WHERE crm = @crm";
+                    this.cmd.Parameters.Add(new SqlParameter("@crm", SqlDbType.VarChar)).Value = medico.CRM;
+
+                    int existingCRMCount = (int)await this.cmd.ExecuteScalarAsync();
+                    if (!Validations.Medico.CheckUniqueCRM(existingCRMCount))
+                        return false;
+
+                    this.cmd.CommandText = @"insert into medico (crm, nome) values (@crm, @nome); 
+                    select CONVERT(int, SCOPE_IDENTITY());";
+                    this.cmd.Parameters.Clear();
+                    this.cmd.Parameters.Add(new SqlParameter("@crm", SqlDbType.VarChar)).Value = medico.CRM;
+                    this.cmd.Parameters.Add(new SqlParameter("@nome", SqlDbType.VarChar)).Value = medico.Nome;
+
+                    medico.Id = (int) await this.cmd.ExecuteScalarAsync();
+
+                }
+            }
+            return medico.Id != 0;
+        }
+
+        //public async Task<bool> Update(Models.Medico medico, int id)
+        //{
+        //    return true;
+        //}
+
+
     }
 }

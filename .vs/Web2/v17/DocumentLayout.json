@@ -5,6 +5,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|c:\\users\\junio\\onedrive\\documentos\\jn moura curso\\projeto api github\\web2\\web2\\controllers\\medicoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|solutionrelative:web2\\controllers\\medicoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\web2\\controllers\\medicamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|solutionrelative:web2\\controllers\\medicamentoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|c:\\users\\junio\\onedrive\\documentos\\jn moura curso\\projeto api github\\web2\\web2\\repositories\\sqlserver\\medico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|solutionrelative:web2\\repositories\\sqlserver\\medico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|c:\\users\\junio\\onedrive\\documentos\\jn moura curso\\projeto api github\\web2\\web2\\validations\\medico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|solutionrelative:web2\\validations\\medico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|c:\\users\\junio\\onedrive\\documentos\\jn moura curso\\projeto api github\\web2\\web2\\repositories\\sqlserver\\medicamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6048DE64-C3B4-4820-92A5-D50FB5B7553A}|Web2\\Web2.csproj|solutionrelative:web2\\repositories\\sqlserver\\medicamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +42,67 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Medico.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Validations\\Medico.cs",
+              "RelativeDocumentMoniker": "Web2\\Validations\\Medico.cs",
+              "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Validations\\Medico.cs",
+              "RelativeToolTip": "Web2\\Validations\\Medico.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T21:42:09.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Medico.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Repositories\\SQLServer\\Medico.cs",
+              "RelativeDocumentMoniker": "Web2\\Repositories\\SQLServer\\Medico.cs",
+              "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Repositories\\SQLServer\\Medico.cs",
+              "RelativeToolTip": "Web2\\Repositories\\SQLServer\\Medico.cs",
+              "ViewState": "AQIAAGcAAAAAAAAAAAAswIAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T21:18:23.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MedicosController.cs",
               "DocumentMoniker": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Controllers\\MedicosController.cs",
               "RelativeDocumentMoniker": "Web2\\Controllers\\MedicosController.cs",
               "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Controllers\\MedicosController.cs",
               "RelativeToolTip": "Web2\\Controllers\\MedicosController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "ViewState": "AQIAADwAAAAAAAAAAAAUwEwAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T14:22:47.142Z",
+              "WhenOpened": "2024-06-26T19:25:20.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MedicamentosController.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Controllers\\MedicamentosController.cs",
+              "RelativeDocumentMoniker": "Web2\\Controllers\\MedicamentosController.cs",
+              "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Controllers\\MedicamentosController.cs",
+              "RelativeToolTip": "Web2\\Controllers\\MedicamentosController.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAAcwBcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T11:59:09.814Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Medicamento.cs",
+              "DocumentMoniker": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Repositories\\SQLServer\\Medicamento.cs",
+              "RelativeDocumentMoniker": "Web2\\Repositories\\SQLServer\\Medicamento.cs",
+              "ToolTip": "C:\\Users\\junio\\OneDrive\\Documentos\\JN Moura curso\\Projeto API github\\Web2\\Web2\\Repositories\\SQLServer\\Medicamento.cs",
+              "RelativeToolTip": "Web2\\Repositories\\SQLServer\\Medicamento.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAA0wIEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-26T19:50:30.011Z",
               "EditorCaption": ""
             }
           ]

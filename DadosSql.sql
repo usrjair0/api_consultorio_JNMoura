@@ -1,17 +1,19 @@
 create database consultorio2
 use consultorio2;
-sp_help medicamento;
+--sp_help medicamento;
+--sp_help medico;
+--sp_help paciente;
 create table medico (
 	id int identity(1,1),
-	crm varchar(9) not null,
+	crm varchar(9),
 	nome varchar(100) not null,
 	constraint PK_medico primary key (crm)
 );
 
 create table Paciente (
 	id int identity(1,1),
-	nome varchar(100),
-	datanascimento date,
+	nome varchar(100) not null,
+	datanascimento date not null,
 	constraint PK_paciente primary key (id)
 );
 
@@ -37,4 +39,7 @@ insert into medico (nome, crm) values ('Leticia Albuquerque','123458/SP');
 insert into medico (nome, crm) values ('Thiago José','123459/RN');
 
 
-select id, crm, nome from medico where nome like 'j%';
+select convert(int, SCOPE_IDENTITY());
+
+SELECT COUNT(1) FROM medico WHERE crm = '123456/SP';
+

@@ -9,6 +9,7 @@ namespace Web2.Models
 
         [Required]
         [StringLength(9)]
+
         public string CRM { get; set; }
 
         [Required]

@@ -67,9 +67,30 @@ namespace Web2.Controllers
             
         }
 
+        [HttpPost]
         // POST: api/Medicos
-        public void Post([FromBody]string value)
+        public async Task<IHttpActionResult> Post([FromBody]Models.Medico medico)
         {
+            try
+            {
+                if(!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                if (!await this.RepositorioMedico.Insert(medico))
+                {
+                    if (!Validations.Medico.UniqueCRM)
+                        return BadRequest("O CRM informado já existe na base de dados");
+                    else
+                        return InternalServerError();
+                }
+                    
+                return Ok(medico);
+            }
+            catch (Exception ex)
+            {
+                Utils.Logger.WriteException(Configurations.Logger.getFullPath(), ex);
+                return InternalServerError();
+            }
         }
 
         // PUT: api/Medicos/5

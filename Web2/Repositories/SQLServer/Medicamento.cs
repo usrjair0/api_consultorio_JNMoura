@@ -25,7 +25,7 @@ namespace Web2.Repositories.SQLServer
             this.DefaultCacheTimeInSeconds = Configurations.Cache.GetDefaultCacheTimeInSeconds();
         }
 
-        public async Task<List<Models.Medicamento>> ObterTodos()
+        public async Task<List<Models.Medicamento>> SelectAll()
         {
             if (cacheItem != null)
                 return cacheItem;
@@ -57,7 +57,7 @@ namespace Web2.Repositories.SQLServer
             return medicamentos;
         }
 
-        public async Task<Models.Medicamento> ObterporID(int id)
+        public async Task<Models.Medicamento> SelectById(int id)
         {
             Models.Medicamento medicamento = cacheItem?.Find(x => x.Id == id);
 
@@ -91,7 +91,7 @@ namespace Web2.Repositories.SQLServer
             return medicamento;
         }
 
-        public async Task<List<Models.Medicamento>> ObterporNome(string nome)
+        public async Task<List<Models.Medicamento>> SelectByName(string nome)
         {
             //return cacheItem.Where(x => x.Nome.ToLower().Contains(nome.ToLower())).ToList();
 
@@ -127,14 +127,14 @@ namespace Web2.Repositories.SQLServer
             return medicamentos;
         }
 
-        public async Task<bool> Inserir(Models.Medicamento medicamento)
+        public async Task<bool> Insert(Models.Medicamento medicamento)
         {
             using (conn)
             {
                 await this.conn.OpenAsync();
                 using (cmd)
                 {
-                    this.cmd.CommandText = "insert into medicamento (nome, datafabricacao, datavencimento) values (@nome,@datafabricacao,@datavencimento); select CONVERT(int, @@identity);";
+                    this.cmd.CommandText = "insert into medicamento (nome, datafabricacao, datavencimento) values (@nome,@datafabricacao,@datavencimento); select CONVERT(int, SCOPE_IDENTITY());";
                     this.cmd.Parameters.Add(new SqlParameter("@nome", SqlDbType.VarChar)).Value = medicamento.Nome;
                     this.cmd.Parameters.Add(new SqlParameter("@datafabricacao", SqlDbType.Date)).Value = medicamento.DataFabricacao;
                     if (medicamento.DataVencimento != null)

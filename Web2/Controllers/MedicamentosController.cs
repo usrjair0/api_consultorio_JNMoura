@@ -22,7 +22,7 @@ namespace Web2.Controllers
         {
             try
             {
-               return Ok(await this.medicamentoRepo.ObterTodos());
+               return Ok(await this.medicamentoRepo.SelectAll());
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace Web2.Controllers
         {
             try
             {
-                Models.Medicamento medicamento = await this.medicamentoRepo.ObterporID(id);
+                Models.Medicamento medicamento = await this.medicamentoRepo.SelectById(id);
                 if (medicamento is null)
                     return NotFound();
                 return Ok(medicamento);
@@ -56,7 +56,7 @@ namespace Web2.Controllers
         {
             try
             {
-                return Ok(await medicamentoRepo.ObterporNome(nome));
+                return Ok(await medicamentoRepo.SelectByName(nome));
             }
             catch (Exception ex)
             {
@@ -73,7 +73,7 @@ namespace Web2.Controllers
             {
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
-                if (!await this.medicamentoRepo.Inserir(medicamento))
+                if (!await this.medicamentoRepo.Insert(medicamento))
                     return InternalServerError();
                 return Ok(medicamento);
             }
