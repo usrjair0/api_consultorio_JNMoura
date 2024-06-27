@@ -21,9 +21,9 @@ namespace Web2.Models
         }
         public Medico(int id, string crm, string nome)
         {
-            Id = id;
-            CRM = crm;
-            Nome = nome;
+            this.Id = id;
+            this.CRM = crm;
+            this.Nome = nome;
         }
     }
 }

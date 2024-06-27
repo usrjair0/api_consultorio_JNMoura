@@ -21,7 +21,7 @@ namespace Web2.Controllers
         {
             try
             {
-                return Ok(await this.RepositorioMedico.Select());
+                return Ok(await this.RepositorioMedico.SelectAll());
             }
             catch (Exception ex)
             {

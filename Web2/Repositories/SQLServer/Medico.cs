@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -8,6 +7,7 @@ namespace Web2.Repositories.SQLServer
 {
     public class Medico
     {
+        //Falta fazer o cache
         private readonly SqlConnection conn;
         private readonly SqlCommand cmd;
 
@@ -18,7 +18,7 @@ namespace Web2.Repositories.SQLServer
 
         }
 
-        public async Task <List<Models.Medico>> Select()
+        public async Task <List<Models.Medico>> SelectAll()
         {
             List<Models.Medico> medicos = new List<Models.Medico>();
             using(this.conn)
@@ -54,7 +54,7 @@ namespace Web2.Repositories.SQLServer
                 using(this.cmd)
                 {
                     this.cmd.CommandText = "select id, crm, nome from medico where nome like @nome;";
-                    this.cmd.Parameters.Add(new SqlParameter("@nome", SqlDbType.VarChar)).Value = $"{nome}%";
+                    this.cmd.Parameters.Add(new SqlParameter("@nome", SqlDbType.VarChar)).Value = $"%{nome}%";
                     using (SqlDataReader dr = await this.cmd.ExecuteReaderAsync())
                     {
                         while (await dr.ReadAsync())

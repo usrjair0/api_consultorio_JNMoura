@@ -23,10 +23,10 @@ namespace Web2.Models
 
         public Medicamento(int id, string nome, DateTime dataFabricacao, DateTime? dataVencimento)
         {
-            Id = id;
-            Nome = nome;
-            DataFabricacao = dataFabricacao;
-            DataVencimento = dataVencimento;
+            this.Id = id;
+            this.Nome = nome;
+            this.DataFabricacao = dataFabricacao;
+            this.DataVencimento = dataVencimento;
         }
     }
 }
