@@ -41,5 +41,9 @@ insert into medico (nome, crm) values ('Thiago José','123459/RN');
 
 select convert(int, SCOPE_IDENTITY());
 
-SELECT COUNT(1) FROM medico WHERE crm = '123456/SP';
+select id, nome, datanascimento from Paciente;
+insert into Paciente (nome, datanascimento) values ('joão Silva','1999-07-04');
+insert into Paciente (nome, datanascimento) values ('José Firmino','2002-07-04');
+insert into Paciente (nome, datanascimento) values ('Abner Silva','1970-09-10');
+insert into Paciente (nome, datanascimento) values ('Clotilde Albuquerque','1989-10-25');
 
