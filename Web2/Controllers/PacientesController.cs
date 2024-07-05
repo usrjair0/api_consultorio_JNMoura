@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Web2.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class PacientesController : ApiController
     {
         private readonly Repositories.SQLServer.Paciente RepositorioPaciente;
@@ -74,7 +76,7 @@ namespace Web2.Controllers
                 if(!await this.RepositorioPaciente.Insert(paciente))
                     return InternalServerError();
 
-                return Ok();
+                return Ok(paciente);
             }
             catch (Exception ex)
             {
@@ -98,7 +100,7 @@ namespace Web2.Controllers
                 if (!await this.RepositorioPaciente.Update(paciente))
                     return NotFound();
 
-                return Ok();
+                return Ok(paciente);
             }
             catch (Exception ex)
             {
@@ -115,6 +117,7 @@ namespace Web2.Controllers
             {
                 if(!await this.RepositorioPaciente.Delete(id))
                     return NotFound();
+
                 return Ok();
             }
             catch (Exception ex)
