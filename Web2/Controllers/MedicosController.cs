@@ -105,14 +105,7 @@ namespace Web2.Controllers
                 if (!ModelState.IsValid)
                     return BadRequest(ModelState);
 
-                if (!await this.RepositorioMedico.Update(medico))
-                {
-                    if (!Validations.Medico.UniqueCRM)
-                        return BadRequest("O CRM informado já existe na base de dados");
-                    else
-                        return InternalServerError();
-                }
-                return Ok(medico);
+                return Ok(await this.RepositorioMedico.Update(medico));
             }
             catch (Exception ex)
             {

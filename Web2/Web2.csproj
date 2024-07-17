@@ -113,20 +113,26 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Configurations\Cache.cs" />
     <Compile Include="Configurations\Database.cs" />
+    <Compile Include="Controllers\AutenticacoesController.cs" />
     <Compile Include="Controllers\MedicamentosController.cs" />
     <Compile Include="Controllers\MedicosController.cs" />
     <Compile Include="Controllers\PacientesController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Configurations\Logger.cs" />
+    <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Medicamento.cs" />
     <Compile Include="Models\Medico.cs" />
     <Compile Include="Models\Paciente.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\SQLServer\Autenticar.cs" />
     <Compile Include="Repositories\SQLServer\Medicamento.cs" />
     <Compile Include="Repositories\SQLServer\Medico.cs" />
     <Compile Include="Repositories\SQLServer\Paciente.cs" />
+    <Compile Include="Repositories\SQLServer\Usuario.cs" />
     <Compile Include="Utils\Cache.cs" />
     <Compile Include="Utils\Logger.cs" />
     <Compile Include="Validations\Medicamento.cs" />
